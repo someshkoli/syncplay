@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:syncplay/screens/registerScreen.dart';
 // import 'package:spotify_sdk/models/crossfade_state.dart';
 // import 'package:spotify_sdk/spotify_sdk.dart';
 // // import 'package:spotify_sdk/models/player_state.dart';
@@ -11,10 +12,16 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 // import 'package:spotify_sdk/models/image_uri.dart';
 import 'package:syncplay/screens/welcome.dart';
 import 'package:syncplay/screens/testScreen.dart';
+import 'package:syncplay/screens/loginScreen.dart';
+import 'package:syncplay/screens/registerScreen.dart';
+import 'package:syncplay/screens/dashboardScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 Future<void> main() async {
   await DotEnv().load('.env');
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -27,10 +34,14 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0XFF1C2035),
         brightness: Brightness.dark
       ),
-      home: RecentCard(),
-      // initialRoute: WelcomePage.id,
+      // home: RegisterScreen(),
+      initialRoute: FirebaseAuth.instance.currentUser() != null ? DashboardScreen.id : WelcomePage.id,
+      // initialRoute: firebaseAWelcomePage.id,
       routes: {
-        WelcomePage.id : (context) => WelcomePage()
+        WelcomePage.id : (context) => WelcomePage(),
+        LoginScreen.id : (context) => LoginScreen(),
+        RegisterScreen.id: (context) => RegisterScreen(),
+        DashboardScreen.id: (context) => DashboardScreen()
       },
     );
   }

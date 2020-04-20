@@ -27,7 +27,6 @@ class RecentCardWidget extends StatelessWidget {
                 fit: BoxFit.cover,
                 colorFilter:
                     ColorFilter.mode(Colors.black54, BlendMode.darken)),
-            color: Colors.blue,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Center(

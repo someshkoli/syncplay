@@ -11,19 +11,16 @@ class RecentScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-      child: ListView.separated(
-        shrinkWrap: true,
-        itemCount: recentSongsList.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, int index) {
-          return recentSongsList[index];
-        },
-        separatorBuilder: (BuildContext context, int index) => SizedBox(
-          width: 20,
-        ),
-        // children: recentSongsList
+    return ListView.separated(
+      padding: EdgeInsets.all(20),
+      shrinkWrap: true,
+      itemCount: recentSongsList.length,
+      scrollDirection: Axis.horizontal,
+      itemBuilder: (BuildContext context, int index) {
+        return recentSongsList[index];
+      },
+      separatorBuilder: (BuildContext context, int index) => SizedBox(
+        width: 20,
       ),
     );
   }

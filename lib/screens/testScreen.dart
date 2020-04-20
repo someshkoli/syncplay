@@ -34,12 +34,20 @@ class _RecentCardState extends State<RecentCard> {
       color: Colors.white,
       child: Column(
         children: <Widget>[
-          Expanded(
-            child: RecentScrollView(recentSongsList: recentSongsList),
+          Padding(
+            padding: const EdgeInsets.all(50),
+            child: Text(
+              'Recent',
+              style: TextStyle(color: Colors.black, fontSize: 20),
+            ),
           ),
+          Expanded(child: RecentScrollView(recentSongsList: recentSongsList)),
           Expanded(
-            child: Text("helo",style: TextStyle(color: Colors.black),),
-          )
+            child: Container(
+              color: Colors.red,
+              height: 100,
+            ),
+          ),
         ],
       ),
     );
