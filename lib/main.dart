@@ -32,10 +32,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         accentColor: Color(0XFF0BCAC7),
         primaryColor: Color(0XFF1C2035),
-        brightness: Brightness.dark
+        brightness: Brightness.dark,
+        fontFamily: 'Avenir'
       ),
-      // home: RegisterScreen(),
-      initialRoute: FirebaseAuth.instance.currentUser() != null ? DashboardScreen.id : WelcomePage.id,
+      home: DashboardScreen(),
+      // initialRoute: FirebaseAuth.instance.currentUser() != null ? DashboardScreen.id : WelcomePage.id,
       // initialRoute: firebaseAWelcomePage.id,
       routes: {
         WelcomePage.id : (context) => WelcomePage(),
