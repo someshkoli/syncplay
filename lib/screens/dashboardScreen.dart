@@ -69,10 +69,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(35, 20, 0, 10),
               child: Text(
-                'Recent',
+                'Recent Songs',
                 style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 25,
+                    // fontWeight: FontWeight.w700,
                     color: koffWhite),
               ),
             ),
@@ -84,13 +84,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
               padding: const EdgeInsets.fromLTRB(35, 0, 20, 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                // crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Text(
                     'Chats',
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 25,
+                      // fontWeight: FontWeight.w700,
                       color: koffWhite
                     ),
                   ),
