@@ -1,6 +1,6 @@
 # syncplay
 
-A new Flutter project.
+Stopped development of this project for time being due to shortage of api for spotify 
 
 ## Getting Started
 
